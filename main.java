@@ -9,6 +9,7 @@ public class main {
         System.out.println("\nWellcome to the subject : 'INTRODUCTION TO JAVA', which task would you like to join? (1,2,3....)\n");
         int decision = scan.nextInt();
         bucle(decision);
+        scan.close();
 		
 	}
 
@@ -38,7 +39,46 @@ public class main {
 
     private static void week02() {
 
-        System.out.println("probando");
+        System.out.println("\nPlease, choose the start number of the multiplication table: \n");
+        Scanner scan = new Scanner(System.in);
+        int numero1 = scan.nextInt();
+        System.out.println("\nPlease, choose the end number of the multiplication table: \n");
+        int numero2 = scan.nextInt();
+        System.out.println();
+
+        for(int i=numero1;i<numero2;i++){
+            System.out.print("--------");
+        }
+        System.out.println();
+
+        for(int i=numero1;i<=numero2;i++){
+            System.out.printf("%6d",i);
+        }
+        System.out.println();
+        
+        for(int i=numero1;i<numero2;i++){
+            System.out.print("--------");
+        }
+        System.out.println();
+
+        if(numero1<numero2){
+            
+             for(int i=numero1;i<=numero2;i++){
+                System.out.printf("%6d|",i);
+                    for(int j=numero1;j<=numero2;j++){
+                      System.out.printf("%6d",i*j);
+                   }
+                  System.out.println();
+            }
+            
+        
+        }else{
+            System.out.println("\nERROR. The start number MUST be smaller that the end number, restarting the game....\n");
+            week02();
+        }
+
+
+
     }
 
     private static void week01() {
