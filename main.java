@@ -52,6 +52,9 @@ public class main {
         System.out.println();
 
         for(int i=numero1;i<=numero2;i++){
+            if(i==numero1){
+                System.out.printf("       ");
+            }
             System.out.printf("%6d",i);
         }
         System.out.println();
