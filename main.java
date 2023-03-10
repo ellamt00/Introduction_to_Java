@@ -13,15 +13,24 @@ public class main {
 		
 	}
 
+
+
+
+
+    //METODO PARA ELEGIR EL EJERCICIO QUE QUEREMOS REALIZAR 
+
     private static void bucle(int decision) {
 
         switch(decision){
-            case 1 : System.out.println("\nYou choose the exercise: week01(): \n");
+            case 1 : System.out.println("\nYou choosed the exercise: week01(): \n");
                     week01();
                     break;
-            case 2 : System.out.println("\nYou choose the exercise: week02(): \n");
+            case 2 : System.out.println("\nYou choosed the exercise: week02(): \n");
                     week02();
-                    break;                    
+                    break;  
+            case 3 : System.out.println("\nYou choosed the exercise: week03(): \n");
+                    week03();
+                    break;
         }
 
         System.out.println("\nWould you like to see another exercise? YES=1 NO=0\n");
@@ -36,6 +45,69 @@ public class main {
         }
 
     }
+
+    //EJERCICIO DE LA TERCERA SEMANA
+    
+    private static void week03() {
+        Scanner scan4 = new Scanner(System.in);
+        System.out.println("\nPlease, introduce the dimension of the array: ");
+        int dimension = scan4.nextInt();
+        int[] array1 = new int[dimension];
+        System.out.println("\nPlease, introduce the numbers of the array, press the enter button after each number: \n");
+        for(int i=0;i<dimension;i++){
+            array1[i] = scan4.nextInt();
+        }
+       ascendente(array1,dimension);
+
+    }
+
+    private static void ascendente(int[] array1, int dimension) {
+       int aux = 0;
+
+       
+       for(int i=0;i<dimension-1;i++){
+           for(int j=0;j<dimension-1-i;j++){
+           if(array1[j]>array1[j+1]){
+               aux = array1[j];
+               array1[j] = array1[j+1];
+               array1[j+1] = aux;
+           }
+           }           
+
+       }
+      
+        System.out.println("\nThe array sorted <<<<< : ");
+        for(int i=0;i<dimension;i++){
+            System.out.print(" "+ array1[i]+ " ");
+        }
+            System.out.println();
+
+
+         for(int i=0;i<dimension-1;i++){
+            for(int j=0;j<dimension-1-i;j++){
+                if(array1[j]<array1[j+1]){
+                    aux = array1[j];
+                    array1[j] = array1[j+1];
+                    array1[j+1] = aux;
+                }
+                }           
+     
+            }
+
+            System.out.println("\nThe array sorted >>>>> : ");
+            for(int i=0;i<dimension;i++){
+                System.out.print(" "+ array1[i]+ " ");
+            }
+                System.out.println();
+
+        }
+
+        
+        
+
+
+    //EJERCICIO DE LA SEGUNDA SEMANA 
+
 
     private static void week02() {
 
@@ -83,6 +155,9 @@ public class main {
 
 
     }
+
+
+    //EJERCICIO DE LA PRIMERA SEMANA
 
     private static void week01() {
 
