@@ -31,6 +31,9 @@ public class main {
             case 3 : System.out.println("\nYou choosed the exercise: week03(): \n");
                     week03();
                     break;
+            case 4: System.out.println("\nYou choosed the exercise: week04(): \n");
+                    week04();
+                    break;
         }
 
         System.out.println("\nWould you like to see another exercise? YES=1 NO=0\n");
@@ -46,8 +49,89 @@ public class main {
 
     }
 
-    //EJERCICIO DE LA TERCERA SEMANA
+    //EJERCICIO DE LA CUARTA SEMANA
+
+    private static void week04(){
+        Scanner scan5 = new Scanner(System.in);
+        System.out.println("\nPlease, introduce the number of rows for the FIRST matrix: ");
+        int rows = scan5.nextInt();
+        System.out.println("\nPlease, introduce the number of columns for the FIRST matrix: ");
+        int columns = scan5.nextInt();
+        int [][] matriz1 = new int[rows][columns];
+
+        //creation of the matrix1
+        for(int i=0;i<rows;i++){
+            for(int j=0;j<columns;j++){
+                System.out.println("\nNumber for the "+i+j+" position" );
+                matriz1[i][j] = scan5.nextInt();
+            }
+        }
+
+        System.out.println("\nPlease, introduce the number of rows for the SECOND matrix: ");
+        int rows2 = scan5.nextInt();
+        System.out.println("\nPlease, introduce the number of columns for the SECOND matrix: ");
+        int columns2 = scan5.nextInt();
+        int [][] matriz2 = new int[rows][columns];
+
+        if(columns!=columns2 && rows!=rows2){
+            System.out.println("\nERROR, THE COLUMNS AND ROWS NEEDS TO BE THE SAME FOR MAKING THE SUM!!");
+            week04();
+
+        }else{
+
+        //creation of the matrix2
+        for(int i=0;i<rows2;i++){
+            for(int j=0;j<columns2;j++){
+                System.out.println("\nNumber for the "+i+j+" position" );
+                matriz2[i][j] = scan5.nextInt();
+            }
+        }
+
+        suma(matriz1,rows,columns,matriz2,rows2,columns2);
+    }
+
+    }
     
+    private static void suma(int[][] matriz1, int rows, int columns, int[][] matriz2, int rows2, int columns2) {
+        System.out.println("\nFIRST MATRIX ");
+        for(int i=0;i<rows;i++){
+            for(int j=0;j<columns;j++){
+                System.out.print(matriz1[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("\nSECOND MATRIX ");
+        for(int i=0;i<rows2;i++){
+            for(int j=0;j<columns2;j++){
+                System.out.print(matriz2[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+        int[][]suma = new int[rows][columns];
+        for(int i=0;i<rows;i++){
+            for(int j=0;j<columns;j++){
+                suma[i][j] = matriz1[i][j] + matriz2[i][j];
+            }
+        }
+
+        //SUMA
+        System.out.println("\nSUM MATRIX ");
+        for(int i=0;i<rows2;i++){
+            for(int j=0;j<columns2;j++){
+                System.out.print(suma[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+
+
+
+
+
+    //EJERCICIO DE LA TERCERA SEMANA
+
     private static void week03() {
         Scanner scan4 = new Scanner(System.in);
         System.out.println("\nPlease, introduce the dimension of the array: ");
