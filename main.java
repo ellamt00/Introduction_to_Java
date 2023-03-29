@@ -34,6 +34,9 @@ public class main {
             case 4: System.out.println("\nYou choosed the exercise: week04(): \n");
                     week04();
                     break;
+            case 5: System.out.println("\nYou choosed the exercise: week05(): \n");
+                    week05();
+                    break;
         }
 
         System.out.println("\nWould you like to see another exercise? YES=1 NO=0\n");
@@ -49,7 +52,64 @@ public class main {
 
     }
 
+    //EJERCICIO DE LA QUINTA SEMANA
+
+    private static void week05() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\nHow many cars do you want to sort?"); 
+        int tamanio = scan.nextInt();
+
+        String[][] nuevo = new String[tamanio][2];
+        int contador = 1;
+
+        System.out.println("\n\nNAMES OF THE CARS: ");
+        for(int i=0;i<tamanio;i++){
+            System.out.println("\n\nName of the "+contador+" car:");
+            nuevo[i][0] = scan.next();
+            contador++;
+        }
+
+        contador = 1;
+
+        System.out.println("\n\nMILEAGES OF THE CARS: ");
+        for(int i=0;i<tamanio;i++){
+            System.out.println("\nMileage of the "+contador+" car:");
+            nuevo[i][1] = scan.next();
+            contador++;
+        }
+
+        int auxiliar1 = 0;
+        int auxiliar2 = 0;
+        String aux ;
+ 
+        System.out.println("\nCARS SORTED IN DESCENDING ORDER ACORDING TO THEIR MILEAGES: \n");
+        for(int i=0;i<tamanio-1;i++){
+            for(int j=0;j<tamanio-1-i;j++){
+                auxiliar1 = Integer.parseInt(nuevo[j][1]);
+                auxiliar2 = Integer.parseInt(nuevo[j+1][1]);
+                if(auxiliar1 < auxiliar2){
+                   aux = nuevo[j][1];
+                   nuevo[j][1] = nuevo[j+1][1];
+                   nuevo[j+1][1] = aux;
+                }
+                
+            }
+        }
+
+        for(int i=0;i<tamanio;i++){
+            for(int j=0;j<2;j++){
+                System.out.println(" "+nuevo[i][j]+" ");
+            }
+            System.out.println();
+
+        }
+        
+
+    }
+
     //EJERCICIO DE LA CUARTA SEMANA
+
+    
 
     private static void week04(){
         Scanner scan5 = new Scanner(System.in);
